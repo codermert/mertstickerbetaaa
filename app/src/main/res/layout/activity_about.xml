@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shashank.sony.fancyaboutpagelib.FancyAboutPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+
+            <com.shashank.sony.fancyaboutpagelib.FancyAboutPage
+                android:id="@+id/fancyaboutpage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/circular1ImageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginEnd="80dp"
+                    android:src="@drawable/yasin"
+                    app:civ_border_color="#40FFFFFF"
+                    app:civ_border_width="5dp" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/circular2ImageView"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="190dp"
+                    android:layout_marginEnd="120dp"
+                    android:src="@drawable/hayabusa"
+                    app:civ_border_color="#40FFFFFF"
+                    app:civ_border_width="5dp" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/circularImageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/mert"
+                    app:civ_border_color="#40FFFFFF"
+                    app:civ_border_width="1dp" />
+
+
+            </com.shashank.sony.fancyaboutpagelib.FancyAboutPage>
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-6180386869505541/6127590466">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

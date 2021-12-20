@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StickerOPS</string>
+
+    <string name="developer_name" translatable="false">Hata Bildir</string>
+    <string name="telegram_yonlendir" translatable="false">Paket Başvurusu</string>
+
+    <string name="arclayout_description">After the formation of the Galactic Em</string>
+    <string name="arclayout_development">In February 2013, The Walt Disney Company CEO Bob Iger confirmed the development of</string>
+
+    <string name="json_link">https://gist.githubusercontent.com/codermert/44770df5d8fd9e4049bb2a8902c16f9c/raw/381a29ea666ca195ea807f3f14214452c8248543/contents.json</string>
+</resources>

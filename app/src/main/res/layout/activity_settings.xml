@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="9dp"
+    android:padding="1dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:paddingTop="15dp"
+            android:layout_marginStart="1dp"
+            android:textStyle="bold"
+            android:includeFontPadding="true"
+            android:text="StickerOPS Storys"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <xute.storyview.StoryView
+        android:id="@+id/storyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:spaceBetweenImageAndIndicator="1dp"
+        android:layout_margin="10dp"
+        app:storyImageRadius="10dp"
+        app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:includeFontPadding="true"
+            android:text="codermert"/>
+
+        <ImageView
+            android:id="@+id/verifiedlogo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="12dp"
+            app:srcCompat="@drawable/verified"
+            tools:ignore="MissingConstraints" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"
+            android:includeFontPadding="false"
+            android:text="21/09/2021 paylaşıldı"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="yasintohan"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="19/10/2021  paylaşıldı"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="hayabusa"/>
+                <ImageView
+                    android:id="@+id/verifiedlogo2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="12dp"
+                    app:srcCompat="@drawable/verified"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="04/10/2021 paylaşıldı"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="tanishraj"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="14/12/2021 paylaşıldı"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="sticker_bot"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="07/03/2021 paylaşıldı"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="ca-app-pub-6180386869505541/6127590466"></com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
