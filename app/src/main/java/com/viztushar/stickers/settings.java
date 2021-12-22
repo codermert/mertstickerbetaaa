@@ -1,6 +1,8 @@
 package com.viztushar.stickers;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.google.android.gms.ads.AdRequest;
@@ -18,7 +20,9 @@ public class settings extends AppCompatActivity {
     StoryView storyView2;
     StoryView storyView3;
     StoryView storyView4;
+    StoryView storyView5;
     private AdView mAdView2;
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,9 @@ public class settings extends AppCompatActivity {
         storyView4 = findViewById(R.id.storyView4); // find the XML view using findViewById
         storyView4.resetStoryVisits();// reset the storyview
 
+        storyView5 = findViewById(R.id.storyView5); // find the XML view using findViewById
+        storyView5.resetStoryVisits();// reset the storyview
+
         ArrayList<StoryModel> StoriesList = new ArrayList<>();  // create a Array list of Stories
         StoriesList.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/4UHf/CQKbZbTiz","Coder Mert","Turkey"));
         storyView.setImageUris(StoriesList);  // finally set the stories to storyview
@@ -52,10 +59,14 @@ public class settings extends AppCompatActivity {
         StoriesList1.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/FBJi/Hdk79sSzS","Yasin Tohan","Turkey"));
         storyView1.setImageUris(StoriesList1);  // finally set the stories to storyview
 
+        ArrayList<StoryModel> StoriesList5 = new ArrayList<>();  // create a Array list of Stories
+        StoriesList5.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/dFok/wYeoYC6oL","Advertisement","Popüler"));
+        storyView5.setImageUris(StoriesList5);  // finally set the stories to storyview
+
         ArrayList<StoryModel> StoriesList2 = new ArrayList<>();  // create a Array list of Stories
-        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/7gH7/S9JPxT1Wy","Hayabusa","Turkey"));
-        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/F3iD/Xkm2FD1RJ","Hayabusa","Turkey"));
-        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/KqSX/XT6tJvRbx","Hayabusa","Turkey"));
+        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/7gH7/S9JPxT1Wy","ibrahim AKBULUT","Turkey"));
+        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/F3iD/Xkm2FD1RJ","ibrahim AKBULUT","Turkey"));
+        StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/KqSX/XT6tJvRbx","ibrahim AKBULUT","Turkey"));
         storyView2.setImageUris(StoriesList2);  // finally set the stories to storyview
 
 

@@ -122,6 +122,52 @@
 
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="advertisement"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="Şu anda popüler"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
 
 
     <LinearLayout
@@ -153,7 +199,7 @@
                     android:layout_marginStart="10dp"
                     android:textStyle="bold"
                     android:includeFontPadding="true"
-                    android:text="hayabusa"/>
+                    android:text="ixhayabusa"/>
                 <ImageView
                     android:id="@+id/verifiedlogo2"
                     android:layout_width="20dp"
@@ -263,6 +309,11 @@
                 />
         </LinearLayout>
     </LinearLayout>
+
+
+
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
