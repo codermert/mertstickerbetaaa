@@ -14,6 +14,7 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -23,13 +24,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
-
-
-
-
+import com.codemybrainsout.ratingdialog.RatingDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -52,6 +51,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity implements GetStickers.Callbacks {
 
@@ -213,8 +214,23 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
                 startActivity(new Intent(MainActivity.this, settings.class));
                 break;
             case(R.id.discover_video):
+                final RatingDialog ratingDialog = new RatingDialog.Builder(this)
+                        .session(1)
+                        .threshold(4)
+                        .ratingBarColor(R.color.yellow)
+                        .playstoreUrl("https://play.google.com/store/apps/details?id=com.codermert.sticker")
+                        .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
+                            @Override
+                            public void onFormSubmitted(String feedback) {
+                                Toast.makeText(getApplicationContext(), "Geri bildiriminiz için teşekkürler", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(Intent.ACTION_VIEW,
+                                        Uri.parse("https://twitter.com/codermert")));
+                            }
+                        })
+                        .build();
 
-                Toast.makeText(getApplicationContext(),"Yapım aşamasında!",Toast.LENGTH_LONG).show();
+
+                ratingDialog.show();
                 break;
         }
         return true;

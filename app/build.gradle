@@ -35,6 +35,7 @@ dependencies {
     implementation 'com.github.bxute:StoryView:v1.0'
     implementation 'com.github.florent37:arclayout:1.0.3'
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    implementation 'com.codemybrainsout.rating:ratingdialog:1.0.8'
 
 
 

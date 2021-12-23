@@ -16,7 +16,7 @@
 
     <item
         android:id="@+id/discover_video"
-        android:title="Keşfet"
+        android:title="Bildirim"
         app:showAsAction="always"
         />
 
