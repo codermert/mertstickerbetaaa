@@ -10,7 +10,7 @@ public  class FbReactions {
             R.drawable.ic_heart);
 
     public static Reaction[] reactions = {
-            new Reaction(ReactConstants.LIKE, ReactConstants.BLUE, R.drawable.ic_like),
+            new Reaction(ReactConstants.LIKE, ReactConstants.BLUE, R.drawable.ic_gray_like),
             new Reaction(ReactConstants.LOVE, ReactConstants.RED_LOVE, R.drawable.ic_heart),
             new Reaction(ReactConstants.SMILE, ReactConstants.YELLOW_WOW, R.drawable.ic_happy),
             new Reaction(ReactConstants.WOW, ReactConstants.YELLOW_WOW, R.drawable.ic_surprise),

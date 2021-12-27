@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -85,6 +86,7 @@ public class StickerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sticker_details);
 
+
         final ReactButton reactButton = findViewById(R.id.add_to_whatsapp);
         reactButton.setReactions(FbReactions.reactions);
         reactButton.setDefaultReaction(FbReactions.defaultReact);
@@ -131,16 +133,12 @@ public class StickerDetailsActivity extends AppCompatActivity {
         reactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction("com.whatsapp.intent.action.ENABLE_STICKER_PACK");
-                intent.putExtra(EXTRA_STICKER_PACK_ID, stickerPack.identifier);
-                intent.putExtra(EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY);
-                intent.putExtra(EXTRA_STICKER_PACK_NAME, stickerPack.name);
+
                 try {
 
                     if (mRewardedAd != null) {
                         showRewardedAd();
-                        startActivityForResult(intent, ADD_PACK);
+
                     } else {
                         Log.d("---AdMob", "The interstitial ad wasn't ready yet.");
                         Toast.makeText(getApplicationContext(), "Reklam izlemeniz lazım", Toast.LENGTH_SHORT).show();
@@ -192,6 +190,12 @@ public class StickerDetailsActivity extends AppCompatActivity {
                                 // Set the ad reference to null so you don't show the ad a second time.
                                 Log.d(TAG1, "Ad was dismissed.");
                                 loadRewardedAd();
+                                Intent intent = new Intent();
+                                intent.setAction("com.whatsapp.intent.action.ENABLE_STICKER_PACK");
+                                intent.putExtra(EXTRA_STICKER_PACK_ID, stickerPack.identifier);
+                                intent.putExtra(EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY);
+                                intent.putExtra(EXTRA_STICKER_PACK_NAME, stickerPack.name);
+                                startActivityForResult(intent, ADD_PACK);
                             }
                         });
                     }
