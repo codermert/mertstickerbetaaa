@@ -2,6 +2,7 @@ package com.viztushar.stickers;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -29,13 +31,20 @@ import android.widget.Toast;
 
 
 import com.codemybrainsout.ratingdialog.RatingDialog;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.orhanobut.hawk.Hawk;
 import com.viztushar.stickers.adapter.StickerAdapter;
 import com.viztushar.stickers.model.StickerModel;
@@ -77,7 +86,8 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
     private AdView mAdView2;
     final Context context1 = this;
     final Context context2 = this;
-
+    private RewardedAd mRewardedAd;
+    private final String TAG1 = "--->AdMob";
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -117,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
+                loadRewardedAd();
             }
         });
 
@@ -139,8 +150,52 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
         recyclerView.setLayoutManager(layoutManager);
 
         new GetStickers(this, this, getResources().getString(R.string.json_link)).execute();
+
     }
 
+    private void loadRewardedAd() {
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+                        Log.d(TAG1, loadAdError.getMessage());
+                        mRewardedAd = null;
+                        Log.d(TAG1, "Ad was loaded.");
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                        Log.d(TAG1, "Ad is loaded.");
+
+                        mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                // Called when ad is shown.
+                                Log.d(TAG1, "Ad was shown.");
+                            }
+
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                // Called when ad fails to show.
+                                Log.d(TAG1, "Ad failed to show.");
+                            }
+
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                // Called when ad is dismissed.
+                                // Set the ad reference to null so you don't show the ad a second time.
+                                Log.d(TAG1, "Ad was dismissed.");
+                                loadRewardedAd();
+                            }
+                        });
+                    }
+                });
+    }
 
 
     public static void SaveImage(Bitmap finalBitmap, String name, String identifier) {
@@ -214,6 +269,7 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
                 startActivity(new Intent(MainActivity.this, settings.class));
                 break;
             case(R.id.discover_video):
+                showReawardedAd();
                 final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                         .session(1)
                         .threshold(4)
@@ -298,9 +354,29 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
         }
 
         Log.d(TAG, "onListLoaded: " + stickerPacks.size());
+
     }
 
     private static String getLastBitFromUrl(final String url) {
         return url.replaceFirst(".*/([^/?]+).*", "$1");
+    }
+
+    private void showReawardedAd(){
+        if (mRewardedAd != null) {
+            Activity activityContext = MainActivity.this;
+            mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    // Handle the reward.
+                    Log.d(TAG1, "The user earned the reward.");
+                    int rewardAmount = rewardItem.getAmount();
+                    String rewardType = rewardItem.getType();
+
+
+                }
+            });
+        } else {
+            Log.d(TAG1, "The rewarded ad wasn't ready yet.");
+        }
     }
 }
