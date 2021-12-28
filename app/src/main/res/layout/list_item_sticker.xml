@@ -96,6 +96,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             tools:ignore="ObsoleteLayoutParam">
 
+
             <ImageView
                 android:id="@+id/download"
                 android:layout_width="56dp"

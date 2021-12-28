@@ -22,7 +22,10 @@
         app:popupTheme="?attr/popupMenuStyle"
         tools:ignore="UnusedAttribute" />
 
-
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 
@@ -44,8 +47,8 @@
         android:id="@+id/add_to_whatsapp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
         android:layout_marginBottom="22dp"
         android:text="Çıkartmayı WhatsApp'a ekle"
         android:soundEffectsEnabled="true"

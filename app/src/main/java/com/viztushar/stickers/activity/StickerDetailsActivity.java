@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -15,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -59,6 +62,10 @@ import static com.viztushar.stickers.MainActivity.EXTRA_STICKER_PACK_NAME;
 import com.amrdeveloper.reactbutton.ReactButton;
 import com.amrdeveloper.reactbutton.Reaction;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
+
 public class StickerDetailsActivity extends AppCompatActivity {
 
     Context context;
@@ -92,12 +99,19 @@ public class StickerDetailsActivity extends AppCompatActivity {
         reactButton.setDefaultReaction(FbReactions.defaultReact);
         reactButton.setEnableReactionTooltip(true);
 
+
+        final Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_heart);
+        final Shape.DrawableShape drawableShape = new Shape.DrawableShape(drawable, true);
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
                 loadRewardedAd();
             }
         });
+
+
+
 
 
 
@@ -141,10 +155,10 @@ public class StickerDetailsActivity extends AppCompatActivity {
 
                     } else {
                         Log.d("---AdMob", "The interstitial ad wasn't ready yet.");
-                        Toast.makeText(getApplicationContext(), "Reklam izlemeniz lazım", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Reklam yüklenmedi tekrar deneyin", Toast.LENGTH_SHORT).show();
                     }
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(StickerDetailsActivity.this, "Sanırım WhatsApp yüklü değil veya paketiniz orjinal değil", Toast.LENGTH_LONG).show();
+                    Toast.makeText(StickerDetailsActivity.this, "Sanırım WhatsApp yüklü değil veya paketiniz orijinal değil", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -196,6 +210,17 @@ public class StickerDetailsActivity extends AppCompatActivity {
                                 intent.putExtra(EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY);
                                 intent.putExtra(EXTRA_STICKER_PACK_NAME, stickerPack.name);
                                 startActivityForResult(intent, ADD_PACK);
+                                final KonfettiView konfettiView = findViewById(R.id.konfettiView);
+                                konfettiView.build()
+                                        .addColors(Color.YELLOW, Color.DKGRAY, Color.RED)
+                                        .setDirection(0.0, 359.0)
+                                        .setSpeed(1f, 5f)
+                                        .setFadeOutEnabled(true)
+                                        .setTimeToLive(2000L)
+                                        .addShapes(Shape.Square.INSTANCE, Shape.Circle.INSTANCE)
+                                        .addSizes(new Size(12, 5f))
+                                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                                        .streamFor(300, 5000L);
                             }
                         });
                     }
