@@ -13,7 +13,13 @@ import xute.storyview.StoryView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+
+
+
 public class settings extends AppCompatActivity {
+
+
+
 
     StoryView storyView;
     StoryView storyView1;
@@ -21,12 +27,17 @@ public class settings extends AppCompatActivity {
     StoryView storyView3;
     StoryView storyView4;
     StoryView storyView5;
+    StoryView storyView6;
+
+
     private AdView mAdView2;
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+
 
 
         mAdView2 = findViewById(R.id.adView2);
@@ -51,8 +62,11 @@ public class settings extends AppCompatActivity {
         storyView5 = findViewById(R.id.storyView5); // find the XML view using findViewById
         storyView5.resetStoryVisits();// reset the storyview
 
+        storyView6 = findViewById(R.id.storyView6); // find the XML view using findViewById
+        storyView6.resetStoryVisits();// reset the storyview
+
         ArrayList<StoryModel> StoriesList = new ArrayList<>();  // create a Array list of Stories
-        StoriesList.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/4UHf/CQKbZbTiz","Coder Mert","Turkey"));
+        StoriesList.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/ZYR2/8tqpbmkN6","Coder Mert","Turkey"));
         storyView.setImageUris(StoriesList);  // finally set the stories to storyview
 
         ArrayList<StoryModel> StoriesList1 = new ArrayList<>();  // create a Array list of Stories
@@ -63,6 +77,10 @@ public class settings extends AppCompatActivity {
         StoriesList5.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/dFok/wYeoYC6oL","Advertisement","Popüler"));
         storyView5.setImageUris(StoriesList5);  // finally set the stories to storyview
 
+        ArrayList<StoryModel> StoriesList6 = new ArrayList<>();  // create a Array list of Stories
+        StoriesList6.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/HDCQ/pVmALsVBk","Ankit Patwa","India"));
+        storyView6.setImageUris(StoriesList6);  // finally set the stories to storyview
+
         ArrayList<StoryModel> StoriesList2 = new ArrayList<>();  // create a Array list of Stories
         StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/7gH7/S9JPxT1Wy","ibrahim AKBULUT","Turkey"));
         StoriesList2.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/F3iD/Xkm2FD1RJ","ibrahim AKBULUT","Turkey"));
@@ -71,8 +89,7 @@ public class settings extends AppCompatActivity {
 
 
         ArrayList<StoryModel> StoriesList3 = new ArrayList<>();  // create a Array list of Stories
-        StoriesList3.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/6ETL/XAgbSVyT7","Tanish Raj","India"));
-        StoriesList3.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/5up4/Vv9d8BuYg","Tanish Raj","India"));
+        StoriesList3.add(new StoryModel("https://thumb.cloud.mail.ru/weblink/thumb/xw1/omq3/7cdceRTWz","Hartawan Bahari","Indonesia"));
         storyView3.setImageUris(StoriesList3);  // finally set the stories to storyview
 
 

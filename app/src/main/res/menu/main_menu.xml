@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/about_me"
-        android:title="BAĞIŞ YAP"
+        android:title="Hakkında"
         app:showAsAction="always"
         />
 

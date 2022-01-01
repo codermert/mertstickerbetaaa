@@ -17,6 +17,8 @@ import com.shashank.sony.fancyaboutpagelib.FancyAboutPage;
 
 public class about extends AppCompatActivity {
 
+
+
     private AdView mAdView1;
 
     @SuppressLint("MissingPermission")
@@ -25,6 +27,9 @@ public class about extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+
+
 
         mAdView1 = findViewById(R.id.adView1);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -41,7 +46,7 @@ public class about extends AppCompatActivity {
         fancyAboutPage.setVersionNameAsAppSubTitle("Alfa\n");
         fancyAboutPage.setAppDescription("Harika şeyler, bireyler tarafından değil, harika bir ekip tarafından yapılır. Mütevazı bir lider ve bir aykırı değer tarafından yönetilen tutkulu bir harika ekip kurduk.\n\n" +
                 "Biz sadece para için çalışmayan küçük, tutkulu bir ekibiz, insanların hayatlarına dokunmak ve insanlık için olumlu bir etki yaratmak için tutkuyla StickerOPS'u yaratan yaratıcılarız. Para bizim için hiçbir zaman bir cazibe olmadı. Gece yarısı yağ yakmamızı sağlayan amaçtır. Güçlü yönlerde oynamaya inanıyoruz ve herkesin oynayacak bir rolü var ve bunu mükemmel bir şekilde sunmak için birbirimize güveniyoruz ve harika bir sürecimiz var!\n\n" +
-                "Teknolojiyi, tasarladığımız, kodladığımız, test ettiğimiz bir etki sağlamak için harika bir araç olarak kullanıyoruz. Bunu gerçekleştirmek için kan, ter ve gözyaşıyla çalışan, çılgın vizyona sahip küçük çılgın bir ekibiz!\n\nTelegram Bağış: @codermert\n\n Sevgilerle \n\n Coder Mert & Yasin Tohan & Hayabusa\n\n\n\n");
+                "Teknolojiyi, tasarladığımız, kodladığımız, test ettiğimiz bir etki sağlamak için harika bir araç olarak kullanıyoruz. Bunu gerçekleştirmek için kan, ter ve gözyaşıyla çalışan, çılgın vizyona sahip küçük çılgın bir ekibiz!\n\nTelegram Bağış: @codermert\n\n Sevgilerle \n\nCoder Mert - Ankit - Hartawan - Yasin Tohan - Hayabusa\n\n\n\n");
         fancyAboutPage.addEmailLink("codermert@bk.ru");
         fancyAboutPage.addTwitterLink("https://twitter.com/codermert");
         fancyAboutPage.addLinkedinLink("https://www.linkedin.com/in/codermert/");

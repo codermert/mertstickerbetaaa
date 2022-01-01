@@ -49,6 +49,8 @@ import com.orhanobut.hawk.Hawk;
 import com.viztushar.stickers.adapter.StickerAdapter;
 import com.viztushar.stickers.model.StickerModel;
 import com.viztushar.stickers.task.GetStickers;
+import com.onesignal.OneSignal;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
     final Context context2 = this;
     private RewardedAd mRewardedAd;
     private final String TAG1 = "--->AdMob";
+    private static final String ONESIGNAL_APP_ID = "f9f24819-d4c5-479d-9532-065552e6084b";
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -120,6 +124,12 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
         adView.setAdSize(AdSize.BANNER);
 
         adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
 
         mAdView2 = findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -157,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements GetStickers.Callb
 
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+        RewardedAd.load(this, "ca-app-pub-6180386869505541/3716021870",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:layout_margin="9dp"
-    android:padding="1dp"
+    android:layout_margin="0dp"
+    android:padding="0dp"
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,7 +21,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:paddingTop="15dp"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:includeFontPadding="true"
             android:text="StickerOPS Storys"/>
@@ -166,6 +169,57 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <xute.storyview.StoryView
+            android:id="@+id/storyView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spaceBetweenImageAndIndicator="1dp"
+            android:layout_margin="10dp"
+            app:storyImageRadius="10dp"
+            app:storyItemIndicatorWidth="1dp" />   <!-- Here is the Story view preview on tap will expand and show full screen stories -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="true"
+                    android:text="mrcoolest"/>
+                <ImageView
+                    android:id="@+id/verifiedlogo3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="12dp"
+                    app:srcCompat="@drawable/verified"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="false"
+                android:text="04/01/2022 paylaşıldı"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 
 
@@ -200,13 +254,6 @@
                     android:textStyle="bold"
                     android:includeFontPadding="true"
                     android:text="ixhayabusa"/>
-                <ImageView
-                    android:id="@+id/verifiedlogo2"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="12dp"
-                    app:srcCompat="@drawable/verified"
-                    tools:ignore="MissingConstraints" />
 
             </LinearLayout>
             <TextView
@@ -251,7 +298,15 @@
                     android:layout_marginStart="10dp"
                     android:textStyle="bold"
                     android:includeFontPadding="true"
-                    android:text="tanishraj"/>
+                    android:text="hartawan"/>
+                <ImageView
+                    android:id="@+id/verifiedlogo2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="12dp"
+                    app:srcCompat="@drawable/verified"
+                    tools:ignore="MissingConstraints" />
+
 
             </LinearLayout>
             <TextView

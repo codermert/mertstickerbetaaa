@@ -30,6 +30,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.varunjohn1990.iosdialogs4android.IOSDialog;
 import com.viztushar.stickers.MainActivity;
 import com.viztushar.stickers.R;
 import com.viztushar.stickers.Sticker;
@@ -129,8 +130,9 @@ public class StickerAdapter extends RecyclerView.Adapter<StickerAdapter.ViewHold
                             new Runnable() {
                                 @Override
                                 public void run() {
-                                    viewHolder.download.setVisibility(View.INVISIBLE);
+                                    viewHolder.download.setVisibility(View.VISIBLE);
                                     viewHolder.bar.setVisibility(View.VISIBLE);
+                                    Toast.makeText(context.getApplicationContext(), "Lütfen bekleyin", Toast.LENGTH_SHORT).show();
                                     for (final Sticker s : StickerPack.get(viewHolder.getAdapterPosition()).getStickers()) {
                                         Log.d("adapter", "onClick: " + s.imageFileName);
                                         Glide.with(context)
@@ -159,8 +161,12 @@ public class StickerAdapter extends RecyclerView.Adapter<StickerAdapter.ViewHold
                                                     }
                                                 }).submit();
                                     }
-                                    viewHolder.download.setVisibility(View.INVISIBLE);
+                                    viewHolder.download.setVisibility(View.VISIBLE);
                                     viewHolder.bar.setVisibility(View.INVISIBLE);
+                                    new IOSDialog.Builder(context.getApplicationContext())
+                                            .message("Hey! Çıkartma paketi indirildi şimdi de paketi WhatsApp'a ekle\nArkadaşlarına sticker gönder tadını yaşa\uD83C\uDF89") // String or String Resource ID
+                                            .build()
+                                            .show();
                                 }
                             }
                     );
@@ -168,7 +174,7 @@ public class StickerAdapter extends RecyclerView.Adapter<StickerAdapter.ViewHold
                 }
             });
         } else {
-            viewHolder.rl.setVisibility(View.INVISIBLE);
+            viewHolder.rl.setVisibility(View.VISIBLE);
         }
 
     }
